@@ -1,0 +1,597 @@
+[
+  {
+    "id": 1,
+    "name": "Entradas",
+    "icon": "🔥",
+    "products": [
+      {
+        "id": "ent-1",
+        "name": "Albóndigas Endiabladas",
+        "description": "Deliciosas bolitas de carne magra bañadas en salsa de la casa, hojas baby, acompañadas de pan.",
+        "price": 24000,
+        "icon": "🍖"
+      },
+      {
+        "id": "ent-2",
+        "name": "Molcajete Guacamole",
+        "description": "Molcajete de guacamole con pico de gallo y totopos.",
+        "price": 24000,
+        "icon": "🥑"
+      },
+      {
+        "id": "ent-3",
+        "name": "Molcajete Especial",
+        "description": "Molcajete de guacamole con proteína (Birria, Bondiola BBQ, Lomo salteado o Cochinita Pibil), pico de gallo y totopos.",
+        "price": 28000,
+        "icon": "🫕"
+      },
+      {
+        "id": "ent-4",
+        "name": "Chili Con Carne",
+        "description": "Delicioso plato de chile con carne, acompañado de totopos.",
+        "price": 23000,
+        "icon": "🌶️"
+      },
+      {
+        "id": "ent-5",
+        "name": "Empanadas Horneadas",
+        "description": "3 empanadas con relleno de carne de res magra, aceitunas, pasas y vino tinto, acompañadas de chimichurri.",
+        "price": 18000,
+        "icon": "🥟"
+      },
+      {
+        "id": "ent-6",
+        "name": "Choripán Sur",
+        "description": "Pan, chorizo y chimichurri.",
+        "price": 16000,
+        "icon": "🌭"
+      },
+      {
+        "id": "ent-7",
+        "name": "Nachos Tradicionales",
+        "description": "Totopos, pico de gallo, guacamole, cheddar y crema agria.",
+        "price": 16000,
+        "icon": "🧀"
+      },
+      {
+        "id": "ent-8",
+        "name": "Nachos Especiales",
+        "description": "Totopos, proteína (Birria, Lomo Salteado, Bondiola BBQ o Cochinita Pibil), pico de gallo, guacamole, cheddar y sour cream.",
+        "price": 26000,
+        "icon": "🌮"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Ceviches y Causas",
+    "icon": "🐟",
+    "products": [
+      {
+        "id": "cev-1",
+        "name": "Ceviche de Chancho",
+        "description": "Panceta picadita con cebolla, pimentón, limón, acompañado de platanitos.",
+        "price": 27000,
+        "icon": "🍋"
+      },
+      {
+        "id": "cev-2",
+        "name": "Ceviche Caribe",
+        "description": "Camarones, mango, aguacate, pimentón y cebolla morada, acompañada de platanitos.",
+        "price": 28000,
+        "icon": "🦐"
+      },
+      {
+        "id": "cev-3",
+        "name": "Ceviche Peruano",
+        "description": "Tilapia, cebolla, limón, leche de tigre, cilantro y maíz.",
+        "price": 28000,
+        "icon": "🐠"
+      },
+      {
+        "id": "cev-4",
+        "name": "Causita Camarón",
+        "description": "Nuestra receta de causa con camarones en salsa golf y aguacate.",
+        "price": 25000,
+        "icon": "🦐"
+      },
+      {
+        "id": "cev-5",
+        "name": "Causita Pepiada",
+        "description": "Nuestra receta de causa con pollo desmechado en salsa a base de aguacate.",
+        "price": 23000,
+        "icon": "🥗"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Quesapizza",
+    "icon": "🍕",
+    "products": [
+      {
+        "id": "que-1",
+        "name": "Quesapizza Especial",
+        "description": "Quesadilla tipo pizza (Birria, Cochinita Pibil o Bondiola BBQ). Tortillas de harina con base en salsa mexicana, birria de res y queso mozzarella.",
+        "price": 32000,
+        "icon": "🍕"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Tacos",
+    "icon": "🌮",
+    "products": [
+      {
+        "id": "tac-1",
+        "name": "Tacos Birria",
+        "description": "Orden de 3, tortilla de maíz, birria de res, costra de queso, cebolla y cilantro (caldito).",
+        "price": 26000,
+        "icon": "🌮"
+      },
+      {
+        "id": "tac-2",
+        "name": "Tacos Cochinita",
+        "description": "Orden de 3, tortilla de maíz, cochinita pibil, cebolla y salsa de ajo.",
+        "price": 25000,
+        "icon": "🌮"
+      },
+      {
+        "id": "tac-3",
+        "name": "Tacos Carnita Cerdo con Piña",
+        "description": "Orden de 3, tortilla de maíz, trocitos de cerdo picado con trozos de piña, cilantro y cebolla.",
+        "price": 23000,
+        "icon": "🌮"
+      },
+      {
+        "id": "tac-4",
+        "name": "Tacos Mixtos",
+        "description": "Orden de 3, uno de cada uno.",
+        "price": 25000,
+        "icon": "🌮"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hamburguesas",
+    "icon": "🍔",
+    "products": [
+      {
+        "id": "ham-1",
+        "name": "Tapatía",
+        "description": "Pan, carne de res 130g, birria de res, costra de queso, cebolla y cilantro (caldito), acompañada de nuestras papas.",
+        "price": 29000,
+        "icon": "🍔"
+      },
+      {
+        "id": "ham-2",
+        "name": "Tango",
+        "description": "Pan, carne de res 130g, lechuga, chorizo, chimichurri, queso mozarella, acompañada de nuestras papas.",
+        "price": 28000,
+        "icon": "🍔"
+      },
+      {
+        "id": "ham-3",
+        "name": "Chili con Carne Burger",
+        "description": "½ pan, carne de res 130g, queso mozarella, bañada en chili con carne, acompañada de nuestras papas y ensalada de huevo.",
+        "price": 31000,
+        "icon": "🍔"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Canoas de Pan",
+    "icon": "🥖",
+    "products": [
+      {
+        "id": "can-1",
+        "name": "Canoa Lomo Salteado",
+        "description": "Pan, lomo salteado de res, cilantro, queso fundido, acompañada de nuestras papas.",
+        "price": 28000,
+        "icon": "🥖"
+      },
+      {
+        "id": "can-2",
+        "name": "Canoa Bondiola BBQ",
+        "description": "Pan, bondiola cerdo BBQ, encurtido de cebolla y salsa de ajo, queso fundido, acompañada de nuestras papas.",
+        "price": 28000,
+        "icon": "🥖"
+      },
+      {
+        "id": "can-3",
+        "name": "Canoa Albóndigas",
+        "description": "Pan, albóndigas endiabladas, queso fundido, acompañada de nuestras papas.",
+        "price": 28000,
+        "icon": "🥖"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Papas Especiales",
+    "icon": "🍟",
+    "products": [
+      {
+        "id": "pap-1",
+        "name": "Bocanada",
+        "description": "Receta argentina: nuestras papas acompañadas de trozos de carne de res, cebolla, pimentón, chorizo asado y el mejor chimichurri argentino.",
+        "price": 28000,
+        "icon": "🍟"
+      },
+      {
+        "id": "pap-2",
+        "name": "El Diablito",
+        "description": "Receta mexicana: nuestras papas acompañadas de birria de res, guacamole, pico de gallo y sour cream.",
+        "price": 28000,
+        "icon": "🍟"
+      },
+      {
+        "id": "pap-3",
+        "name": "Saicos (a lo pobre)",
+        "description": "Receta peruana: nuestras papas con lomo salteado, huevo frito y cilantro.",
+        "price": 28000,
+        "icon": "🍟"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Arroces y Más",
+    "icon": "🍚",
+    "products": [
+      {
+        "id": "arr-1",
+        "name": "Chaufa de Camarones",
+        "description": "Receta peruana del mejor chaufa con camarones, acompañado de platanitos.",
+        "price": 32000,
+        "icon": "🦐"
+      },
+      {
+        "id": "arr-2",
+        "name": "Chaufa de Cerdo o Pollo",
+        "description": "Receta peruana del mejor chaufa con cerdo o pollo, acompañado de platanitos.",
+        "price": 28000,
+        "icon": "🍚"
+      },
+      {
+        "id": "arr-3",
+        "name": "Costillas en Salsa BBQ de Manzana",
+        "description": "350g de costilla con una base de salsa, acompañado de hojas baby y puré de papa en queso azul.",
+        "price": 38000,
+        "icon": "🍖"
+      },
+      {
+        "id": "arr-4",
+        "name": "Milanesa de Pollo a la Pizza",
+        "description": "Milanesa de pollo con queso y pepperoni, acompañada de papas y hojas baby.",
+        "price": 33000,
+        "icon": "🍗"
+      },
+      {
+        "id": "arr-5",
+        "name": "Sopa de Tortillas",
+        "description": "Sopa a base de tomate con tortillas, pollo y aguacate.",
+        "price": 24000,
+        "icon": "🍲"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Bowls",
+    "icon": "🥣",
+    "products": [
+      {
+        "id": "bow-1",
+        "name": "Bowl Mexicano del Sur",
+        "description": "Arroz, chile con birria o trocitos de pollo, pico de gallo, maíz, aguacate, crema agria y totopos.",
+        "price": 26000,
+        "icon": "🥣"
+      },
+      {
+        "id": "bow-2",
+        "name": "Bowl Inca",
+        "description": "Arroz chaufa con lomo salteado, papas y cilantro.",
+        "price": 27000,
+        "icon": "🥣"
+      },
+      {
+        "id": "bow-3",
+        "name": "Bowl Colombiano",
+        "description": "Arroz, frijol, tiras de carne asada, trocitos de chicharrón, huevo frito, aguacate y platanitos.",
+        "price": 27000,
+        "icon": "🥣"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Cocteles",
+    "icon": "🍹",
+    "products": [
+      {
+        "id": "coc-1",
+        "name": "SUR",
+        "description": "Ron, zumo de limón, miel de jengibre, infusión de jamaica y canela.",
+        "price": 35000,
+        "icon": "🍹"
+      },
+      {
+        "id": "coc-2",
+        "name": "Margarita",
+        "description": "Tequila, triple sec, limón, tajín y sal. Pídelo frappé o agitado.",
+        "price": 35000,
+        "icon": "🍸"
+      },
+      {
+        "id": "coc-3",
+        "name": "Tequila Sunrise",
+        "description": "Tequila, jugo de naranja, granadina y cereza.",
+        "price": 30000,
+        "icon": "🌅"
+      },
+      {
+        "id": "coc-4",
+        "name": "Pisco Sour",
+        "description": "Pisco con nuestra receta.",
+        "price": 35000,
+        "icon": "🍋"
+      },
+      {
+        "id": "coc-5",
+        "name": "Palomita en Cantarito",
+        "description": "Tequila, toronja y limón.",
+        "price": 30000,
+        "icon": "🍹"
+      },
+      {
+        "id": "coc-6",
+        "name": "Mojito de Maracuyá o Tradicional",
+        "description": "Ron, yerbabuena, soda, limón y azúcar.",
+        "price": 30000,
+        "icon": "🌿"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Cocteles con Cerveza",
+    "icon": "🍺",
+    "products": [
+      {
+        "id": "cer-1",
+        "name": "Desmadre",
+        "description": "Cerveza nacional, shot de tequila, michelado con gotas picantes.",
+        "price": 30000,
+        "icon": "🍺"
+      },
+      {
+        "id": "cer-2",
+        "name": "Pola de Verano (litro)",
+        "description": "Cerveza nacional, limón, naranja, soda y yerbabuena.",
+        "price": 28000,
+        "icon": "🍺"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Cocteles con Vino",
+    "icon": "🍷",
+    "products": [
+      {
+        "id": "vin-1",
+        "name": "Tinto de Verano (litro)",
+        "description": "Vino tinto con sprite, yerbabuena, limón y naranja.",
+        "price": 32000,
+        "icon": "🍷"
+      },
+      {
+        "id": "vin-2",
+        "name": "Vino Caliente",
+        "description": "Vino tinto, gotas de brandy, jugo de naranja, miel maple, michelada en azúcar y clavos de olor.",
+        "price": 24000,
+        "icon": "♨️"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Limonadas y Sodas",
+    "icon": "🍋",
+    "products": [
+      {
+        "id": "lim-1",
+        "name": "Limonada Natural",
+        "description": "Limón, azúcar y hielo.",
+        "price": 8000,
+        "icon": "🍋"
+      },
+      {
+        "id": "lim-2",
+        "name": "Limonada Coco, Cerezada o Yerbabuena",
+        "description": "Limonada saborizada a tu elección.",
+        "price": 12000,
+        "icon": "🥤"
+      },
+      {
+        "id": "lim-3",
+        "name": "Limonada Vino",
+        "description": "Limón y vino tinto.",
+        "price": 14000,
+        "icon": "🍷"
+      },
+      {
+        "id": "lim-4",
+        "name": "Chichamorada",
+        "description": "Con hielo y limón.",
+        "price": 9000,
+        "icon": "🫐"
+      },
+      {
+        "id": "lim-5",
+        "name": "Soda Amarilla o Roja",
+        "description": "Escoge la tuya: frutos amarillos o rojos.",
+        "price": 12000,
+        "icon": "🫧"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Cervezas",
+    "icon": "🍺",
+    "products": [
+      {
+        "id": "cerv-1",
+        "name": "Cerveza Nacional",
+        "description": "Cerveza nacional fría. Puedes pedir tu michelada (limón y sal) por +$2.500.",
+        "price": 8000,
+        "icon": "🍺"
+      },
+      {
+        "id": "cerv-2",
+        "name": "Cerveza Importada",
+        "description": "Cerveza importada fría.",
+        "price": 12000,
+        "icon": "🍺"
+      },
+      {
+        "id": "cerv-3",
+        "name": "Cerveza Artesanal",
+        "description": "Pregúntanos por nuestra selección de cervezas artesanales disponibles.",
+        "price": 0,
+        "icon": "🍻"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Gaseosas",
+    "icon": "🥤",
+    "products": [
+      {
+        "id": "gas-1",
+        "name": "Coca Cola",
+        "description": "Coca Cola fría.",
+        "price": 7000,
+        "icon": "🥤"
+      },
+      {
+        "id": "gas-2",
+        "name": "Bretaña",
+        "description": "Bretaña fría.",
+        "price": 7000,
+        "icon": "🥤"
+      },
+      {
+        "id": "gas-3",
+        "name": "Tamarindo",
+        "description": "Gaseosa de tamarindo fría.",
+        "price": 7000,
+        "icon": "🥤"
+      },
+      {
+        "id": "gas-4",
+        "name": "Te Hatsu",
+        "description": "Té Hatsu frío.",
+        "price": 10000,
+        "icon": "🍵"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Cafés Fríos",
+    "icon": "🧊",
+    "products": [
+      {
+        "id": "caf-1",
+        "name": "Tintico con Hielo",
+        "description": "Tinto servido con hielo.",
+        "price": 5000,
+        "icon": "🧊"
+      },
+      {
+        "id": "caf-2",
+        "name": "Tinto con Panela, Limón y Hielo",
+        "description": "Tinto endulzado con panela, limón y hielo.",
+        "price": 8000,
+        "icon": "🍋"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Café",
+    "icon": "☕",
+    "products": [
+      {
+        "id": "cafe-1",
+        "name": "Tinto",
+        "description": "Café negro tradicional.",
+        "price": 4000,
+        "icon": "☕"
+      },
+      {
+        "id": "cafe-2",
+        "name": "Capuchino",
+        "description": "Leche y café.",
+        "price": 8000,
+        "icon": "☕"
+      },
+      {
+        "id": "cafe-3",
+        "name": "Capuchino Baileys",
+        "description": "Capuchino con media onza de Baileys.",
+        "price": 11000,
+        "icon": "🥛"
+      },
+      {
+        "id": "cafe-4",
+        "name": "Café con Leche",
+        "description": "Café y leche.",
+        "price": 7500,
+        "icon": "☕"
+      },
+      {
+        "id": "cafe-5",
+        "name": "Té Chai",
+        "description": "Té chai caliente.",
+        "price": 8000,
+        "icon": "🍵"
+      },
+      {
+        "id": "cafe-6",
+        "name": "Chocolate",
+        "description": "Chocolate en leche.",
+        "price": 8000,
+        "icon": "🍫"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Postres y Tortas",
+    "icon": "🍰",
+    "products": [
+      {
+        "id": "pos-1",
+        "name": "Torta Almojábana",
+        "description": "Deliciosa torta de almojábana.",
+        "price": 12000,
+        "icon": "🍰"
+      },
+      {
+        "id": "pos-2",
+        "name": "Tiramisú",
+        "description": "Tiramisú clásico.",
+        "price": 12000,
+        "icon": "🍮"
+      }
+    ]
+  }
+]

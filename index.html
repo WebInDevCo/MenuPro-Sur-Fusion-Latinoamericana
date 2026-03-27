@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUR — Fusión Latinoamericana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       LOADER / SPLASH SCREEN
+  ══════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-logo-wrap">
+      <img src="images/logo.png" alt="SUR Fusión Latinoamericana" class="loader-logo" id="loaderLogo" />
+    </div>
+    <div class="loader-progress-wrap">
+      <div class="loader-label">Cargando experiencia</div>
+      <div class="loader-track">
+        <div class="loader-fill" id="loaderProgress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CURSOR PERSONALIZADO
+  ══════════════════════════════════ -->
+  <div id="cursor"></div>
+  <div id="cursorFollower"></div>
+
+  <!-- ══════════════════════════════════
+       NAVBAR — Limpio (sin categorías)
+  ══════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-brand">
+      <img src="images/logo.png" alt="SUR" class="nav-logo-img" />
+      <span class="nav-logo-text">SUR</span>
+    </a>
+
+    <div class="nav-right">
+      <button class="nav-cart-btn" id="navCartBtn" aria-label="Ver carrito">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="nav-cart-badge" id="navCartBadge">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="geo geo-1"></div>
+    <div class="geo geo-2"></div>
+    <div class="hero-bg-text" aria-hidden="true">SUR</div>
+
+    <!-- Mapa de Latinoamérica decorativo -->
+    <svg class="hero-map" aria-hidden="true" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- México -->
+      <path d="M60 40 L160 35 L185 55 L175 80 L150 90 L130 105 L100 100 L75 85 L55 70 Z" fill="currentColor" opacity="0.6"/>
+      <!-- América Central -->
+      <path d="M130 105 L150 90 L165 100 L160 120 L145 130 L132 125 Z" fill="currentColor" opacity="0.5"/>
+      <!-- Colombia / Venezuela -->
+      <path d="M132 125 L145 130 L175 125 L200 135 L210 155 L195 165 L170 162 L148 170 L132 155 Z" fill="currentColor" opacity="0.65"/>
+      <!-- Perú -->
+      <path d="M132 155 L148 170 L155 200 L145 225 L125 230 L108 215 L110 185 L122 165 Z" fill="currentColor" opacity="0.6"/>
+      <!-- Brasil -->
+      <path d="M175 125 L240 120 L280 150 L285 190 L270 230 L245 260 L210 270 L185 255 L165 230 L155 200 L148 170 L170 162 L195 165 Z" fill="currentColor" opacity="0.55"/>
+      <!-- Bolivia / Paraguay -->
+      <path d="M145 225 L155 200 L165 230 L185 255 L180 270 L160 272 L142 260 L138 245 Z" fill="currentColor" opacity="0.5"/>
+      <!-- Argentina / Chile -->
+      <path d="M125 230 L145 225 L138 245 L142 260 L145 290 L140 330 L128 370 L118 410 L108 430 L100 420 L95 390 L100 350 L105 310 L108 270 L110 250 Z" fill="currentColor" opacity="0.6"/>
+      <!-- Uruguay -->
+      <path d="M142 260 L160 272 L165 285 L155 295 L142 285 Z" fill="currentColor" opacity="0.5"/>
+      <!-- Chile sur -->
+      <path d="M100 350 L105 310 L108 360 L106 400 L100 420 L95 390 Z" fill="currentColor" opacity="0.4"/>
+    </svg>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-aos>
+        <span class="hero-dot"></span>
+        <span class="eyebrow-txt">Restaurante · Armenia, Colombia</span>
+        <span class="hero-flags">🇲🇽 🇵🇪 🇦🇷 🇨🇴</span>
+      </div>
+
+      <h1 class="hero-title" data-aos data-aos-delay="100">
+        Sabor <em>sin</em><br />fronteras
+      </h1>
+
+      <p class="hero-sub" data-aos data-aos-delay="200">
+        Tacos, ceviches, hamburguesas y cocteles que cruzan toda Latinoamérica.<br />
+        Una sola mesa. Mil historias.
+      </p>
+
+      <div class="hero-actions" data-aos data-aos-delay="300">
+        <a href="#menuApp" class="btn-primary">Ver el Menú</a>
+        <button class="btn-outline" id="heroCartBtn">Hacer un Pedido</button>
+      </div>
+    </div>
+
+    <div class="hero-badges" id="heroBadgesSection" data-aos data-aos-delay="400">
+      <!-- Generado por JS -->
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-arrow"></div>
+      <span>Explorar</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MENU APP — Sidebar + Acordeón
+  ══════════════════════════════════ -->
+  <section id="menuApp">
+
+    <!-- Pestaña lateral (sólo móvil) -->
+    <button id="sidebarTab" aria-label="Ver menú" aria-expanded="false">
+      <svg class="tab-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span class="tab-label">Ver menú</span>
+    </button>
+
+    <!-- Overlay para cerrar sidebar en móvil -->
+    <div id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- SIDEBAR de categorías -->
+    <aside id="menuSidebar" aria-label="Categorías del menú">
+      <div class="sidebar-header">
+        <span class="sidebar-title">El Menú</span>
+      </div>
+      <ul id="sidebarCats" role="list">
+        <!-- Generado por JS -->
+      </ul>
+    </aside>
+
+    <!-- PANEL DE PRODUCTOS -->
+    <div id="menuContent">
+      <!-- Mapa decorativo de fondo en el panel de contenido -->
+      <svg class="menu-map-bg" aria-hidden="true" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 40 L160 35 L185 55 L175 80 L150 90 L130 105 L100 100 L75 85 L55 70 Z" fill="currentColor"/>
+        <path d="M130 105 L150 90 L165 100 L160 120 L145 130 L132 125 Z" fill="currentColor"/>
+        <path d="M132 125 L145 130 L175 125 L200 135 L210 155 L195 165 L170 162 L148 170 L132 155 Z" fill="currentColor"/>
+        <path d="M132 155 L148 170 L155 200 L145 225 L125 230 L108 215 L110 185 L122 165 Z" fill="currentColor"/>
+        <path d="M175 125 L240 120 L280 150 L285 190 L270 230 L245 260 L210 270 L185 255 L165 230 L155 200 L148 170 L170 162 L195 165 Z" fill="currentColor"/>
+        <path d="M145 225 L155 200 L165 230 L185 255 L180 270 L160 272 L142 260 L138 245 Z" fill="currentColor"/>
+        <path d="M125 230 L145 225 L138 245 L142 260 L145 290 L140 330 L128 370 L118 410 L108 430 L100 420 L95 390 L100 350 L105 310 L108 270 L110 250 Z" fill="currentColor"/>
+        <path d="M142 260 L160 272 L165 285 L155 295 L142 285 Z" fill="currentColor"/>
+      </svg>
+      <div class="content-cat-header">
+        <h2 class="content-cat-title" id="contentCatTitle"></h2>
+        <p class="content-cat-sub" id="contentCatSub"></p>
+      </div>
+      <div id="accordionList" role="list">
+        <!-- Generado por JS -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="SUR" class="footer-logo" />
+        <p class="footer-tagline">Fusión Latinoamericana</p>
+        <p class="footer-copy">© 2026 · Todos los derechos reservados</p>
+        <p class="footer-copy">Desarrollado por <a href="https://www.instagram.com/web_indev?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="footer-dev-link">Webindev</a></p>
+      </div>
+
+      <div class="footer-contact">
+        <p class="footer-cat-title">Contacto</p>
+        <a href="https://wa.me/573000000000" class="footer-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.528 5.855L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.37-.22-3.44.902.918-3.352-.24-.386A9.946 9.946 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════
+       CARRITO FLOTANTE
+  ══════════════════════════════════ -->
+  <button class="floating-cart" id="floatingCart" aria-label="Abrir carrito">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 01-8 0"/>
+    </svg>
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+
+  <!-- ══════════════════════════════════
+       PANEL DE CARRITO
+  ══════════════════════════════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3 class="cart-title">Tu Pedido</h3>
+      <button class="cart-close" id="closeCart" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <span class="cart-empty-icon">🛒</span>
+        <p>Tu carrito está vacío</p>
+        <span>Agrega productos del menú</span>
+      </div>
+    </div>
+
+    <div class="cart-footer hidden" id="cartFooter">
+      <div class="cart-counts">
+        <span id="cartCount">0 productos</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="btn-primary btn-full" id="checkoutBtn">Finalizar Pedido →</button>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════
+       MODAL DE CHECKOUT
+  ══════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <div class="checkout-modal" id="checkoutModal">
+    <div class="modal-header">
+      <h3>Confirmar Pedido</h3>
+      <button class="cart-close" id="closeModal" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <form id="checkoutForm" novalidate>
+
+        <div class="form-section">
+          <h4 class="form-section-title">📋 Resumen del pedido</h4>
+          <div id="orderSummary" class="order-summary"></div>
+        </div>
+
+        <div class="form-section">
+          <h4 class="form-section-title">👤 Tus datos</h4>
+          <div class="form-group">
+            <label for="customerName">Nombre completo *</label>
+            <input type="text" id="customerName" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="customerPhone">Teléfono *</label>
+            <input type="tel" id="customerPhone" placeholder="300 000 0000" required />
+          </div>
+          <div class="form-group">
+            <label for="customerAddress">Dirección de entrega *</label>
+            <textarea id="customerAddress" placeholder="Calle, barrio, referencia..." required rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="orderNotes">Observaciones</label>
+            <textarea id="orderNotes" placeholder="Sin cebolla, extra picante, etc." rows="2"></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h4 class="form-section-title">🏪 Sede</h4>
+          <div id="branchSelector" class="radio-group"></div>
+        </div>
+
+        <div class="form-section">
+          <h4 class="form-section-title">🛵 Zona de entrega</h4>
+          <div id="deliveryZones" class="radio-group"></div>
+        </div>
+
+        <div class="form-section">
+          <h4 class="form-section-title">💳 Método de pago</h4>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="payMethod" value="Transferencia" checked />
+              <span>Transferencia / Nequi / Daviplata</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="payMethod" value="Contraentrega" />
+              <span>Pago contraentrega (efectivo)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="order-total-box">
+            <div class="order-total-row">
+              <span>Subtotal productos</span>
+              <span id="modalSubtotal">$0</span>
+            </div>
+            <div class="order-total-row">
+              <span>Domicilio</span>
+              <span id="modalDelivery">$0</span>
+            </div>
+            <div class="order-total-row order-grand">
+              <strong>Total</strong>
+              <strong id="modalTotal">$0</strong>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.528 5.855L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.37-.22-3.44.902.918-3.352-.24-.386A9.946 9.946 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Confirmar y Enviar por WhatsApp
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TOASTS
+  ══════════════════════════════════ -->
+  <div id="toastWrap"></div>
+
+  <!-- Mesa badge (modo QR) -->
+  <div class="mesa-badge hidden" id="mesaBadge"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
