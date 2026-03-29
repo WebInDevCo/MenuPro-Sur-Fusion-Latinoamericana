@@ -530,14 +530,52 @@ function initCartEvents() {
   document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
   document.getElementById('checkoutBtn')?.addEventListener('click', openCheckout);
 
-  // Hero "Hacer un Pedido" → abrir carrito directamente
+  // Hero "Hacer un Pedido" → ir al menú y abrir sidebar
   document.getElementById('heroCartBtn')?.addEventListener('click', () => {
-    openCart();
+    navigateToMenuWithSidebar();
+  });
+
+  // Hero "Ver el Menú" → ir al menú y abrir sidebar
+  document.querySelector('a[href="#menuApp"]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigateToMenuWithSidebar();
   });
 
   document.getElementById('closeModal')?.addEventListener('click', closeModal);
   document.getElementById('modalOverlay')?.addEventListener('click', closeModal);
   document.getElementById('checkoutForm')?.addEventListener('submit', handleCheckoutSubmit);
+}
+
+/* ══════════════════════════════════════════════════════
+   NAVEGAR AL MENÚ Y ABRIR SIDEBAR
+══════════════════════════════════════════════════════ */
+function navigateToMenuWithSidebar() {
+  const menuApp = document.getElementById('menuApp');
+  if (!menuApp) return;
+
+  // Scroll suave hacia la sección del menú
+  menuApp.scrollIntoView({ behavior: 'smooth' });
+
+  // Solo aplica en móvil (≤900px), igual que la lógica del sidebarTab
+  const isMobile = window.innerWidth <= 900;
+  if (!isMobile) return;
+
+  // Esperar a que el scroll termine y el IntersectionObserver
+  // haya activado el sidebarTab, luego abrir el sidebar
+  setTimeout(() => {
+    const sidebar = document.getElementById('menuSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const tab     = document.getElementById('sidebarTab');
+    if (!sidebar || !tab) return;
+
+    if (!sidebar.classList.contains('open')) {
+      sidebar.classList.add('open');
+      overlay?.classList.add('open');
+      tab.classList.add('sidebar-open');
+      tab.setAttribute('aria-expanded', 'true');
+      if (navigator.vibrate) navigator.vibrate(15);
+    }
+  }, 650); // 650ms: tiempo suficiente para el smooth scroll
 }
 
 function openCart() {
