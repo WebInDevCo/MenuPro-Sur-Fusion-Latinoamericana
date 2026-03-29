@@ -363,7 +363,7 @@ body.cursor-hover #cursorFollower { width: 48px; height: 48px; border-color: var
   color: var(--navy);
   border-radius: 0 16px 16px 0;
   padding: 32px 11px;
-  width: 44px;
+  width: 54px;
   flex-direction: column;
   align-items: center;
   gap: 12px;
