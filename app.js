@@ -5,7 +5,7 @@
 /* ── CONFIG ── */
 const CONFIG = {
   restaurantName: "SUR Fusión Latinoamericana",
-  whatsappNumber: "573000000000",
+  whatsappNumber: "573046164560",
   currency: "$",
   branches: [
     { id: 1, name: "Sede Principal", desc: "Armenia, Quindío", icon: "🏪" }
