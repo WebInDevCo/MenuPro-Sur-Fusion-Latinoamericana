@@ -163,7 +163,7 @@ body.cursor-hover #cursorFollower { width: 48px; height: 48px; border-color: var
   display: flex; align-items: center; gap: 10px;
   flex-shrink: 0;
 }
-.nav-logo-img { width: 110px; height: 110px; object-fit: contain; border-radius: 0; background: none; }
+.nav-logo-img { width: 80px; height: 80px; object-fit: contain; border-radius: 0; background: none; }
 .nav-logo-text {
   font-family: var(--font-display);
   font-size: 26px; color: var(--gold); letter-spacing: 0.1em;
@@ -232,6 +232,31 @@ body.cursor-hover #cursorFollower { width: 48px; height: 48px; border-color: var
   -webkit-text-stroke: 1px rgba(184,134,42,0.12);
   letter-spacing: -0.02em; white-space: nowrap;
   user-select: none; pointer-events: none; line-height: 1;
+}
+
+/* Logo grande en el hero */
+.hero-logo-wrap {
+  position: absolute;
+  top: 110px;          /* justo debajo de la navbar fija */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-logo-img {
+  width: clamp(140px, 22vw, 220px);
+  height: clamp(140px, 22vw, 220px);
+  object-fit: contain;
+  filter: drop-shadow(0 0 32px rgba(200,168,75,0.35)) drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+  animation: heroLogoFloat 4s ease-in-out infinite;
+}
+@keyframes heroLogoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@media (max-width: 640px) {
+  .hero-logo-wrap { top: 120px; }
+  .hero-logo-img  { width: clamp(120px, 40vw, 170px); height: clamp(120px, 40vw, 170px); }
 }
 
 .hero-content { position: relative; z-index: 2; max-width: 720px; }
