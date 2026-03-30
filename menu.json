@@ -22,7 +22,7 @@
         "id": "ent-3",
         "name": "Molcajete Especial",
         "description": "Molcajete de guacamole con proteína (Birria, Bondiola BBQ, Lomo salteado o Cochinita Pibil), pico de gallo y totopos.",
-        "price": 28000,
+        "price": 29000,
         "icon": "🫕"
       },
       {
@@ -43,21 +43,21 @@
         "id": "ent-6",
         "name": "Choripán Sur",
         "description": "Pan, chorizo y chimichurri.",
-        "price": 16000,
+        "price": 17000,
         "icon": "🌭"
       },
       {
         "id": "ent-7",
         "name": "Nachos Tradicionales",
         "description": "Totopos, pico de gallo, guacamole, cheddar y crema agria.",
-        "price": 16000,
+        "price": 17000,
         "icon": "🧀"
       },
       {
         "id": "ent-8",
         "name": "Nachos Especiales",
         "description": "Totopos, proteína (Birria, Lomo Salteado, Bondiola BBQ o Cochinita Pibil), pico de gallo, guacamole, cheddar y sour cream.",
-        "price": 26000,
+        "price": 27000,
         "icon": "🌮"
       }
     ]
@@ -400,7 +400,7 @@
   },
   {
     "id": 13,
-    "name": "Limonadas y Sodas",
+    "name": "Limonadas, Sodas y jugos",
     "icon": "🍋",
     "products": [
       {
@@ -437,6 +437,18 @@
         "description": "Escoge la tuya: frutos amarillos o rojos.",
         "price": 12000,
         "icon": "🫧"
+      },
+      {
+        "id": "jug-1",
+        "name": "Jugo en agua",
+        "price": 8000,
+        "icon": "🥤"
+      },
+      {
+        "id": "jug-2",
+        "name": "Jugo en leche",
+        "price": 12000,
+        "icon": "🥤"
       }
     ]
   },
