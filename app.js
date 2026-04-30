@@ -11,10 +11,10 @@ const CONFIG = {
     { id: 1, name: "Sede Principal", desc: "Armenia, Quindío", icon: "🏪" }
   ],
   deliveryZones: [
-    { id: 1, name: "Zona Centro",    cost: 3000 },
-    { id: 2, name: "Zona Norte",     cost: 4000 },
-    { id: 3, name: "Zona Sur",       cost: 4000 },
-    { id: 4, name: "Zona Occidente", cost: 5000 }
+    { id: 1, name: "Zona Centro",    cost: 6000 },
+    { id: 2, name: "Zona Norte",     cost: 6000 },
+    { id: 3, name: "Zona Sur",       cost: 7000 },
+    { id: 4, name: "Zona Occidente", cost: 8000 }
   ]
 };
 
