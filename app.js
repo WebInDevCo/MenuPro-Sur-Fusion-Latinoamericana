@@ -11,10 +11,10 @@ const CONFIG = {
     { id: 1, name: "Sede Principal", desc: "Armenia, Quindío", icon: "🏪" }
   ],
   deliveryZones: [
-    { id: 1, name: "Zona Centro",    cost: 6000 },
-    { id: 2, name: "Zona Norte",     cost: 6000 },
-    { id: 3, name: "Zona Sur",       cost: 7000 },
-    { id: 4, name: "Zona Occidente", cost: 8000 }
+    { id: 1, name: "Zona Centro",    cost: 3000 },
+    { id: 2, name: "Zona Norte",     cost: 4000 },
+    { id: 3, name: "Zona Sur",       cost: 4000 },
+    { id: 4, name: "Zona Occidente", cost: 5000 }
   ]
 };
 
@@ -286,11 +286,18 @@ function renderProducts(catId) {
              Agregar
            </button>`;
 
+    const visualEl = p.image
+      ? `<div class="accord-thumb">
+           <img src="${p.image}" alt="${p.name}" class="accord-thumb-img"
+                onerror="this.closest('.accord-thumb').outerHTML='<span class=\\'accord-icon\\' aria-hidden=\\'true\\'>${p.icon}</span>'">
+         </div>`
+      : `<span class="accord-icon" aria-hidden="true">${p.icon}</span>`;
+
     return `
       <div class="accord-card ${agotado ? 'agotado' : ''}" id="accord-${p.id}" role="listitem">
         <div class="accord-header" onclick="toggleAccordion('${p.id}')" role="button" tabindex="0"
              aria-expanded="false" aria-controls="body-${p.id}">
-          <span class="accord-icon" aria-hidden="true">${p.icon}</span>
+          ${visualEl}
           <div class="accord-info">
             <div class="accord-name">${p.name}</div>
           </div>

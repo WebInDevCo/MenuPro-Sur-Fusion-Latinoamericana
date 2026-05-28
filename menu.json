@@ -9,7 +9,8 @@
         "name": "Albóndigas Endiabladas",
         "description": "Deliciosas bolitas de carne magra bañadas en salsa de la casa, hojas baby, acompañadas de pan.",
         "price": 24000,
-        "icon": "🍖"
+        "icon": "🍖",
+        "image":"images/albondigasenchiladas.jpeg"
       },
       {
         "id": "ent-2",
@@ -72,7 +73,8 @@
         "name": "Ceviche de Chancho",
         "description": "Panceta picadita con cebolla, pimentón, limón, acompañado de platanitos.",
         "price": 27000,
-        "icon": "🍋"
+        "icon": "🍋",
+        "image":"images/cevichechancho.jpeg"
       },
       {
         "id": "cev-2",
@@ -93,7 +95,8 @@
         "name": "Causita Camarón",
         "description": "Nuestra receta de causa con camarones en salsa golf y aguacate.",
         "price": 25000,
-        "icon": "🦐"
+        "icon": "🦐",
+        "image":"images/causadecamaron.png"
       },
       {
         "id": "cev-5",
@@ -114,7 +117,8 @@
         "name": "Quesapizza Especial",
         "description": "Quesadilla tipo pizza (Birria, Cochinita Pibil o Bondiola BBQ). Tortillas de harina con base en salsa mexicana, birria de res y queso mozzarella.",
         "price": 32000,
-        "icon": "🍕"
+        "icon": "🍕",
+        "image":"images/quesapizza.jpeg"
       }
     ]
   },
@@ -233,7 +237,8 @@
         "name": "Saicos (a lo pobre)",
         "description": "Receta peruana: nuestras papas con lomo salteado, huevo frito y cilantro.",
         "price": 28000,
-        "icon": "🍟"
+        "icon": "🍟",
+        "image":"images/papasaico.jpeg"
       }
     ]
   },
@@ -247,7 +252,8 @@
         "name": "Chaufa de Camarones",
         "description": "Receta peruana del mejor chaufa con camarones, acompañado de platanitos.",
         "price": 32000,
-        "icon": "🦐"
+        "icon": "🦐",
+        "image":"images/chaufacamarones.jpeg"
       },
       {
         "id": "arr-2",
@@ -268,7 +274,8 @@
         "name": "Milanesa de Pollo a la Pizza",
         "description": "Milanesa de pollo con queso y pepperoni, acompañada de papas y hojas baby.",
         "price": 33000,
-        "icon": "🍗"
+        "icon": "🍗",
+        "image":"images/quesadilladepollo.jpeg"
       },
       {
         "id": "arr-5",
@@ -289,14 +296,16 @@
         "name": "Bowl Mexicano del Sur",
         "description": "Arroz, chile con birria o trocitos de pollo, pico de gallo, maíz, aguacate, crema agria y totopos.",
         "price": 26000,
-        "icon": "🥣"
+        "icon": "🥣",
+        "image":"images/bolwmexicano.jpeg"
       },
       {
         "id": "bow-2",
         "name": "Bowl Inca",
         "description": "Arroz chaufa con lomo salteado, papas y cilantro.",
         "price": 27000,
-        "icon": "🥣"
+        "icon": "🥣",
+        "image":"images/bowlinca.jpeg"
       },
       {
         "id": "bow-3",
@@ -345,7 +354,8 @@
         "name": "Palomita en Cantarito",
         "description": "Tequila, toronja y limón.",
         "price": 30000,
-        "icon": "🍹"
+        "icon": "🍹",
+        "image":"images/cantarito.jpeg"
       },
       {
         "id": "coc-6",
@@ -422,7 +432,8 @@
         "name": "Limonada Vino",
         "description": "Limón y vino tinto.",
         "price": 14000,
-        "icon": "🍷"
+        "icon": "🍷",
+        "image":"images/limonadadevino.png"
       },
       {
         "id": "lim-4",
@@ -595,14 +606,16 @@
         "name": "Torta Almojábana",
         "description": "Deliciosa torta de almojábana.",
         "price": 12000,
-        "icon": "🍰"
+        "icon": "🍰",
+        "image":"images/tortas.jpeg"
       },
       {
         "id": "pos-2",
         "name": "Tiramisú",
         "description": "Tiramisú clásico.",
         "price": 12000,
-        "icon": "🍮"
+        "icon": "🍮",
+        "image":"images/tortas.jpeg"
       }
     ]
   }
