@@ -142,7 +142,8 @@
         "name": "Tacos Cochinita",
         "description": "Orden de 3, tortilla de maíz, cochinita pibil, cebolla y salsa de ajo.",
         "price": 25000,
-        "icon": "🌮"
+        "icon": "🌮",
+        "image":"images/tacoscochinita.webp"
       },
       {
         "id": "tac-3",
@@ -228,7 +229,8 @@
         "name": "Bocanada",
         "description": "Receta argentina: nuestras papas acompañadas de trozos de carne de res, cebolla, pimentón, chorizo asado y el mejor chimichurri argentino.",
         "price": 28000,
-        "icon": "🍟"
+        "icon": "🍟",
+        "image":"images/bocanada.webp"
       },
       {
         "id": "pap-2",
@@ -289,7 +291,8 @@
         "name": "Sopa de Tortillas",
         "description": "Sopa a base de tomate con tortillas, pollo y aguacate.",
         "price": 24000,
-        "icon": "🍲"
+        "icon": "🍲",
+        "image":"images/sopadetortillas.webp"
       }
     ]
   },
