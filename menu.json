@@ -10,7 +10,7 @@
         "description": "Deliciosas bolitas de carne magra bañadas en salsa de la casa, hojas baby, acompañadas de pan.",
         "price": 24000,
         "icon": "🍖",
-        "image":"images/albondigasenchiladas.jpeg"
+        "image":"images/albondigasenchiladas.webp"
       },
       {
         "id": "ent-2",
@@ -38,7 +38,8 @@
         "name": "Empanadas Horneadas",
         "description": "3 empanadas con relleno de carne de res magra, aceitunas, pasas y vino tinto, acompañadas de chimichurri.",
         "price": 18000,
-        "icon": "🥟"
+        "icon": "🥟",
+        "image":"images/empanadas.webp"
       },
       {
         "id": "ent-6",
@@ -59,7 +60,8 @@
         "name": "Nachos Especiales",
         "description": "Totopos, proteína (Birria, Lomo Salteado, Bondiola BBQ o Cochinita Pibil), pico de gallo, guacamole, cheddar y sour cream.",
         "price": 27000,
-        "icon": "🌮"
+        "icon": "🌮",
+        "image":"images/nachos especiales.webp"
       }
     ]
   },
@@ -74,14 +76,15 @@
         "description": "Panceta picadita con cebolla, pimentón, limón, acompañado de platanitos.",
         "price": 27000,
         "icon": "🍋",
-        "image":"images/cevichechancho.jpeg"
+        "image":"images/cevichechancho.webp"
       },
       {
         "id": "cev-2",
         "name": "Ceviche Caribe",
         "description": "Camarones, mango, aguacate, pimentón y cebolla morada, acompañada de platanitos.",
         "price": 28000,
-        "icon": "🦐"
+        "icon": "🦐",
+        "image":"images/cevichecaribe.webp"
       },
       {
         "id": "cev-3",
@@ -96,7 +99,7 @@
         "description": "Nuestra receta de causa con camarones en salsa golf y aguacate.",
         "price": 25000,
         "icon": "🦐",
-        "image":"images/causadecamaron.png"
+        "image":"images/causadecamaron.webp"
       },
       {
         "id": "cev-5",
@@ -118,7 +121,7 @@
         "description": "Quesadilla tipo pizza (Birria, Cochinita Pibil o Bondiola BBQ). Tortillas de harina con base en salsa mexicana, birria de res y queso mozzarella.",
         "price": 32000,
         "icon": "🍕",
-        "image":"images/quesapizza.jpeg"
+        "image":"images/quesapizza.webp"
       }
     ]
   },
@@ -167,14 +170,16 @@
         "name": "Tapatía",
         "description": "Pan, carne de res 130g, birria de res, costra de queso, cebolla y cilantro (caldito), acompañada de nuestras papas.",
         "price": 29000,
-        "icon": "🍔"
+        "icon": "🍔",
+        "image":"images/hamburguesa tapatia.webp"
       },
       {
         "id": "ham-2",
         "name": "Tango",
         "description": "Pan, carne de res 130g, lechuga, chorizo, chimichurri, queso mozarella, acompañada de nuestras papas.",
         "price": 28000,
-        "icon": "🍔"
+        "icon": "🍔",
+        "image":"images/hmaburguesa tango.webp"
       },
       {
         "id": "ham-3",
@@ -230,7 +235,8 @@
         "name": "El Diablito",
         "description": "Receta mexicana: nuestras papas acompañadas de birria de res, guacamole, pico de gallo y sour cream.",
         "price": 28000,
-        "icon": "🍟"
+        "icon": "🍟",
+        "image":"images/papaseldiablito.webp"
       },
       {
         "id": "pap-3",
@@ -238,7 +244,7 @@
         "description": "Receta peruana: nuestras papas con lomo salteado, huevo frito y cilantro.",
         "price": 28000,
         "icon": "🍟",
-        "image":"images/papasaico.jpeg"
+        "image":"images/papasaico.webp"
       }
     ]
   },
@@ -253,7 +259,7 @@
         "description": "Receta peruana del mejor chaufa con camarones, acompañado de platanitos.",
         "price": 32000,
         "icon": "🦐",
-        "image":"images/chaufacamarones.jpeg"
+        "image":"images/chaufacamarones.webp"
       },
       {
         "id": "arr-2",
@@ -267,7 +273,8 @@
         "name": "Costillas en Salsa BBQ de Manzana",
         "description": "350g de costilla con una base de salsa, acompañado de hojas baby y puré de papa en queso azul.",
         "price": 38000,
-        "icon": "🍖"
+        "icon": "🍖",
+        "image":"images/costillas.webp"
       },
       {
         "id": "arr-4",
@@ -275,7 +282,7 @@
         "description": "Milanesa de pollo con queso y pepperoni, acompañada de papas y hojas baby.",
         "price": 33000,
         "icon": "🍗",
-        "image":"images/quesadilladepollo.jpeg"
+        "image":"images/quesadilladepollo.webp"
       },
       {
         "id": "arr-5",
@@ -297,7 +304,7 @@
         "description": "Arroz, chile con birria o trocitos de pollo, pico de gallo, maíz, aguacate, crema agria y totopos.",
         "price": 26000,
         "icon": "🥣",
-        "image":"images/bolwmexicano.jpeg"
+        "image":"images/bolwmexicano.webp"
       },
       {
         "id": "bow-2",
@@ -305,7 +312,7 @@
         "description": "Arroz chaufa con lomo salteado, papas y cilantro.",
         "price": 27000,
         "icon": "🥣",
-        "image":"images/bowlinca.jpeg"
+        "image":"images/bowlinca.webp"
       },
       {
         "id": "bow-3",
@@ -355,7 +362,7 @@
         "description": "Tequila, toronja y limón.",
         "price": 30000,
         "icon": "🍹",
-        "image":"images/cantarito.jpeg"
+        "image":"images/cantarito.webp"
       },
       {
         "id": "coc-6",
@@ -433,7 +440,7 @@
         "description": "Limón y vino tinto.",
         "price": 14000,
         "icon": "🍷",
-        "image":"images/limonadadevino.png"
+        "image":"images/limonadadevino.webp"
       },
       {
         "id": "lim-4",
@@ -607,7 +614,7 @@
         "description": "Deliciosa torta de almojábana.",
         "price": 12000,
         "icon": "🍰",
-        "image":"images/tortas.jpeg"
+        "image":"images/tortas.webp"
       },
       {
         "id": "pos-2",
@@ -615,7 +622,7 @@
         "description": "Tiramisú clásico.",
         "price": 12000,
         "icon": "🍮",
-        "image":"images/tortas.jpeg"
+        "image":"images/tortas.webp"
       }
     ]
   }
