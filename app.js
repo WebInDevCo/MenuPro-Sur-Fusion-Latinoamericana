@@ -11,11 +11,16 @@ const CONFIG = {
     { id: 1, name: "Sede Principal", desc: "Armenia, Quindío", icon: "🏪" }
   ],
   deliveryZones: [
-    { id: 1, name: "Zona Centro",    cost: 3000 },
-    { id: 2, name: "Zona Norte",     cost: 4000 },
-    { id: 3, name: "Zona Sur",       cost: 4000 },
-    { id: 4, name: "Zona Occidente", cost: 5000 }
-  ]
+    { id: 1, name: "Zona Centro",    cost: 7000 },
+    { id: 2, name: "Zona Norte",     cost: 6000 },
+    { id: 3, name: "Zona Sur",       cost: 8000 },
+    { id: 4, name: "Zona Occidente", cost: 7000 }
+  ],
+  // Categorías que cobran empaque ($1.500 por unidad pedida)
+  // IDs: Ceviches(2), Quesapizza(3), Tacos(4), Hamburguesas(5),
+  //      Canoas(6), Papas(7), Arroces(8), Bowls(9), Postres(18)
+  empaqueCategories: [2, 3, 4, 5, 6, 7, 8, 9, 18],
+  empaquePrice: 1500
 };
 
 /* ── ESTADO ── */
@@ -23,6 +28,15 @@ let menuData  = [];
 let cart      = [];
 let activeCat = null;
 let VIEW_MODE = false;
+
+/* Retorna la cantidad total de items que cobran empaque */
+function countEmpaque() {
+  return cart.reduce((total, item) => {
+    const cat = menuData.find(c => c.products.some(p => p.id === item.id));
+    if (cat && CONFIG.empaqueCategories.includes(cat.id)) return total + item.qty;
+    return total;
+  }, 0);
+}
 
 /* ══════════════════════════════════════════════════════
    INIT
@@ -469,9 +483,12 @@ function removeFromCart(productId) {
 }
 
 function updateCartUI() {
-  const total   = cart.reduce((sum, i) => { const p = getProduct(i.id); return sum + (p ? p.price * i.qty : 0); }, 0);
-  const count   = cart.reduce((sum, i) => sum + i.qty, 0);
-  const isEmpty = cart.length === 0;
+  const subtotal  = cart.reduce((sum, i) => { const p = getProduct(i.id); return sum + (p ? p.price * i.qty : 0); }, 0);
+  const empaqueQty = countEmpaque();
+  const empaque   = empaqueQty * CONFIG.empaquePrice;
+  const total     = subtotal + empaque;
+  const count     = cart.reduce((sum, i) => sum + i.qty, 0);
+  const isEmpty   = cart.length === 0;
 
   // Badges
   const countStr = count.toString();
@@ -500,13 +517,13 @@ function updateCartUI() {
     const itemsHTML = cart.map(i => {
       const p = getProduct(i.id);
       if (!p) return '';
-      const subtotal = p.price * i.qty;
+      const subtotalItem = p.price * i.qty;
       return `
         <div class="cart-item">
           <span class="cart-item-icon">${p.icon}</span>
           <div class="cart-item-info">
             <div class="cart-item-name">${p.name}</div>
-            <div class="cart-item-price">${CONFIG.currency}${subtotal.toLocaleString('es-CO')}</div>
+            <div class="cart-item-price">${CONFIG.currency}${subtotalItem.toLocaleString('es-CO')}</div>
             <div class="cart-item-controls">
               <button class="qty-btn" onclick="updateQty('${p.id}',-1)">−</button>
               <span class="qty-count">${i.qty}</span>
@@ -518,8 +535,18 @@ function updateCartUI() {
       `;
     }).join('');
 
+    const empaqueRow = empaqueQty > 0 ? `
+      <div class="cart-item cart-item--empaque">
+        <span class="cart-item-icon">🧴</span>
+        <div class="cart-item-info">
+          <div class="cart-item-name">Empaque <small style="opacity:.65">(${empaqueQty} plato${empaqueQty > 1 ? 's' : ''})</small></div>
+          <div class="cart-item-price">${CONFIG.currency}${empaque.toLocaleString('es-CO')}</div>
+        </div>
+      </div>
+    ` : '';
+
     const emptyEl = document.getElementById('cartEmpty');
-    cartBody.innerHTML = (isEmpty ? '' : itemsHTML);
+    cartBody.innerHTML = (isEmpty ? '' : itemsHTML + empaqueRow);
     if (isEmpty && emptyEl) cartBody.appendChild(emptyEl);
     else if (!isEmpty && emptyEl) cartBody.insertAdjacentElement('afterbegin', emptyEl);
   }
@@ -618,6 +645,12 @@ function closeModal() {
 function renderCheckoutModal() {
   const summary = document.getElementById('orderSummary');
   if (summary) {
+    const empaqueQty = countEmpaque();
+    const empaqueRow = empaqueQty > 0 ? `
+      <div class="order-summary-item">
+        <span>🧴 Empaque (${empaqueQty} plato${empaqueQty > 1 ? 's' : ''})</span>
+        <span>${CONFIG.currency}${(empaqueQty * CONFIG.empaquePrice).toLocaleString('es-CO')}</span>
+      </div>` : '';
     summary.innerHTML = cart.map(i => {
       const p = getProduct(i.id);
       if (!p) return '';
@@ -625,7 +658,7 @@ function renderCheckoutModal() {
         <span>${p.icon} ${p.name} × ${i.qty}</span>
         <span>${CONFIG.currency}${(p.price * i.qty).toLocaleString('es-CO')}</span>
       </div>`;
-    }).join('');
+    }).join('') + empaqueRow;
   }
 
   const branchSel = document.getElementById('branchSelector');
@@ -653,17 +686,34 @@ function renderCheckoutModal() {
 }
 
 function updateModalTotal() {
-  const subtotal = cart.reduce((sum, i) => { const p = getProduct(i.id); return sum + (p ? p.price * i.qty : 0); }, 0);
-  const zoneId   = parseInt(document.querySelector('input[name="deliveryZone"]:checked')?.value || 1);
-  const zone     = CONFIG.deliveryZones.find(z => z.id === zoneId);
-  const delivery = zone ? zone.cost : 0;
-  const total    = subtotal + delivery;
+  const subtotal  = cart.reduce((sum, i) => { const p = getProduct(i.id); return sum + (p ? p.price * i.qty : 0); }, 0);
+  const empaqueQty = countEmpaque();
+  const empaque   = empaqueQty * CONFIG.empaquePrice;
+  const zoneId    = parseInt(document.querySelector('input[name="deliveryZone"]:checked')?.value || 1);
+  const zone      = CONFIG.deliveryZones.find(z => z.id === zoneId);
+  const delivery  = zone ? zone.cost : 0;
+  const total     = subtotal + empaque + delivery;
 
   const fmt = n => `${CONFIG.currency}${n.toLocaleString('es-CO')}`;
   const el  = id => document.getElementById(id);
   if (el('modalSubtotal')) el('modalSubtotal').textContent = fmt(subtotal);
   if (el('modalDelivery')) el('modalDelivery').textContent = fmt(delivery);
   if (el('modalTotal'))    el('modalTotal').textContent    = fmt(total);
+
+  // Insertar/actualizar/eliminar fila de empaque en los totales
+  let empaqueRow = document.getElementById('modalEmpaqueRow');
+  if (empaque > 0) {
+    if (!empaqueRow) {
+      empaqueRow = document.createElement('div');
+      empaqueRow.id = 'modalEmpaqueRow';
+      empaqueRow.className = 'order-total-row';
+      empaqueRow.innerHTML = `<span>🧴 Empaque</span><span id="modalEmpaque"></span>`;
+      el('modalSubtotal')?.closest('.order-total-row')?.after(empaqueRow);
+    }
+    document.getElementById('modalEmpaque').textContent = fmt(empaque);
+  } else if (empaqueRow) {
+    empaqueRow.remove();
+  }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -691,11 +741,13 @@ function handleCheckoutSubmit(e) {
   const branchObj = CONFIG.branches.find(b => b.id === parseInt(branch?.value));
   const zoneObj   = CONFIG.deliveryZones.find(z => z.id === parseInt(zone?.value));
 
-  const subtotal  = cart.reduce((sum, i) => { const p = getProduct(i.id); return sum + (p ? p.price * i.qty : 0); }, 0);
-  const delivery  = zoneObj ? zoneObj.cost : 0;
-  const total     = subtotal + delivery;
+  const subtotal   = cart.reduce((sum, i) => { const p = getProduct(i.id); return sum + (p ? p.price * i.qty : 0); }, 0);
+  const empaqueQty = countEmpaque();
+  const empaque    = empaqueQty * CONFIG.empaquePrice;
+  const delivery   = zoneObj ? zoneObj.cost : 0;
+  const total      = subtotal + empaque + delivery;
 
-  const msg = buildMessage({ name, phone, address, notes, branchObj, zoneObj, payment, subtotal, delivery, total });
+  const msg = buildMessage({ name, phone, address, notes, branchObj, zoneObj, payment, subtotal, empaque, empaqueQty, delivery, total });
 
   window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
 
@@ -706,7 +758,7 @@ function handleCheckoutSubmit(e) {
   showToast('¡Pedido enviado! Revisa WhatsApp 🎉', 'success');
 }
 
-function buildMessage({ name, phone, address, notes, branchObj, zoneObj, payment, subtotal, delivery, total }) {
+function buildMessage({ name, phone, address, notes, branchObj, zoneObj, payment, subtotal, empaque, empaqueQty, delivery, total }) {
   const fmt = n => `$${n.toLocaleString('es-CO')}`;
   const lines = [
     `🐓 *PEDIDO — ${CONFIG.restaurantName}*`,
@@ -721,6 +773,7 @@ function buildMessage({ name, phone, address, notes, branchObj, zoneObj, payment
       const p = getProduct(i.id);
       return p ? `• ${p.name} × ${i.qty} — ${fmt(p.price * i.qty)}` : '';
     }),
+    empaqueQty > 0 ? `• 🧴 Empaque (${empaqueQty} plato${empaqueQty > 1 ? 's' : ''}) — ${fmt(empaque)}` : '',
     ``,
     `🛵 *Zona de entrega:* ${zoneObj?.name || ''} — ${fmt(delivery)}`,
     `💳 *Pago:* ${payment?.value || ''}`,
@@ -728,11 +781,12 @@ function buildMessage({ name, phone, address, notes, branchObj, zoneObj, payment
     ``,
     `━━━━━━━━━━━━━━━━━━━`,
     `Subtotal: ${fmt(subtotal)}`,
+    empaqueQty > 0 ? `🧴 Empaque: ${fmt(empaque)}` : '',
     `Domicilio: ${fmt(delivery)}`,
     `*TOTAL: ${fmt(total)}*`,
     `━━━━━━━━━━━━━━━━━━━`,
   ];
-  return lines.filter(l => l !== null).join('\n');
+  return lines.filter(l => l !== null && l !== '').join('\n');
 }
 
 /* ══════════════════════════════════════════════════════
