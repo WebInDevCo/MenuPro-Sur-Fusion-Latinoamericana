@@ -27,7 +27,7 @@ const CONFIG = {
 let menuData  = [];
 let cart      = [];
 let activeCat = null;
-let VIEW_MODE = false;
+let VIEW_MODE = true;
 
 /* Retorna la cantidad total de items que cobran empaque */
 function countEmpaque() {
