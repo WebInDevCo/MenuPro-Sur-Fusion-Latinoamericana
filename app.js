@@ -7,6 +7,10 @@ const CONFIG = {
   restaurantName: "SUR Fusión Latinoamericana",
   whatsappNumber: "573046164560",
   currency: "$",
+  // 🔴 CONTROL DE DISPONIBILIDAD
+  // true  → se muestra el menú normalmente
+  // false → se muestra la pantalla de "no disponible"
+  storeOpen: false,
   branches: [
     { id: 1, name: "Sede Principal", desc: "Armenia, Quindío", icon: "🏪" }
   ],
@@ -43,6 +47,14 @@ function countEmpaque() {
 ══════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
+
+  // 🔴 Si el negocio está cerrado, se muestra la pantalla de "no disponible"
+  // y no se inicializa nada más (cursor, menú, carrito, etc.)
+  if (!CONFIG.storeOpen) {
+    showClosedScreen();
+    return;
+  }
+
   initCursor();
   initScrollWatcher();
   applyViewMode();
@@ -53,11 +65,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ══════════════════════════════════════════════════════
+   MODO CERRADO — "No disponible"
+══════════════════════════════════════════════════════ */
+function showClosedScreen() {
+  document.body.innerHTML = `
+    <div id="closedScreen" style="
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:2rem;
+      background:#111111;
+      color:#ffffff;
+      font-family:'Poppins', sans-serif;
+      gap:1rem;
+    ">
+      <div style="font-size:3.5rem;">🕐</div>
+      <h1 style="margin:0;font-size:1.6rem;font-weight:600;">
+        En este momento no estamos disponibles
+      </h1>
+      <p style="margin:0;opacity:.7;max-width:420px;line-height:1.5;">
+        Estamos fuera de nuestro horario de atención en este momento.
+        Vuelve a intentarlo más tarde. ¡Gracias por tu paciencia!
+      </p>
+      <div style="margin-top:1rem;font-size:.9rem;opacity:.5;">
+        ${CONFIG.restaurantName}
+      </div>
+    </div>
+  `;
+}
+
+/* ══════════════════════════════════════════════════════
    LOADER / SPLASH
 ══════════════════════════════════════════════════════ */
 function initLoader() {
   const loader = document.getElementById('loader');
   const fill   = document.getElementById('loaderProgress');
+  if (!loader || !fill) return;
 
   let prog = 0;
   const tick = setInterval(() => {
@@ -112,6 +158,7 @@ function initCursor() {
 ══════════════════════════════════════════════════════ */
 function initScrollWatcher() {
   const nav = document.getElementById('navbar');
+  if (!nav) return;
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 30);
   }, { passive: true });
